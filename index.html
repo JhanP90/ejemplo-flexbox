@@ -101,5 +101,114 @@
         </div>
     </footer>
 
+
+    <body>
+
+    <nav class="navbar navbar-expand-lg fixed-top glass-nav">
+        <div class="container-fluid px-4 d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center gap-3">
+                <button class="btn btn-link d-lg-none text-dark p-0 border-0" id="sidebarToggle">
+                    <i class="bi bi-list fs-2"></i>
+                </button>
+                <a class="navbar-brand fw-bold mb-0" href="#inicio">
+                    <i class="bi bi-cpu-fill text-primary"></i> Portfolio<span class="text-primary">UI</span>
+                </a>
+            </div>
+            <div class="d-none d-md-flex gap-4">
+                <a class="nav-link-custom" href="https://github.com/JhanP90" target="_blank"><i class="bi bi-github fs-5"></i></a>
+                <a class="nav-link-custom" href="https://www.linkedin.com/in/jhanpoolposadacasas/" target="_blank"><i class="bi bi-linkedin fs-5"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="layout-wrapper">
+        
+        <aside class="sidebar" id="sidebar">
+            <nav class="d-flex flex-column mt-3">
+                <small class="text-uppercase text-muted fw-bold mb-3 px-3">Menú Principal</small>
+                <a href="#inicio" class="sidebar-link active"><i class="bi bi-house-door me-2"></i> Inicio</a>
+                <a href="#experiencia" class="sidebar-link"><i class="bi bi-briefcase me-2"></i> Experiencia</a>
+                <a href="#logros" class="sidebar-link"><i class="bi bi-trophy me-2"></i> Logros</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="content-body">
+                
+                <header id="inicio" class="hero-creative d-flex align-items-center text-center">
+                    <div class="container d-flex flex-column align-items-center">
+                        <div class="badge bg-soft-primary mb-3 floating text-primary">Desarrollador Web</div>
+                        <h1 class="display-1 fw-bold main-title">Tecnólogo en desarrollo web</h1>
+                        <p class="lead text-muted mb-4 max-w-600">
+                            Experiencia en la creación de aplicaciones web modernas y eficientes. Apasionado por el diseño de interfaces intuitivas y la optimización del rendimiento.
+                        </p>
+                        <div class="d-flex gap-3 flex-wrap justify-content-center">
+                            <a href="#experiencia" class="btn btn-primary-custom">Experiencia</a>
+                        </div>
+                    </div>
+                </header>
+
+                <section id="logros" class="stats-bar py-5">
+                    <div class="container d-flex flex-wrap justify-content-around align-items-center text-center gap-4">
+                        <div class="stat-item">
+                            <h3 class="fw-bold text-white mb-0">5+</h3>
+                            <small class="text-uppercase text-primary fw-semibold">Proyectos Entregados</small>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="experiencia" class="container-fluid px-4 py-5 my-5">
+                    <div class="text-center mb-5">
+                        <h2 class="fw-bold display-5">Experiencia y Proyectos</h2>
+                    </div>
+                    
+                    <div class="cards-grid">
+                        <div class="card service-card d-flex flex-column p-4 border-0 shadow-sm">
+                            <div class="icon-box mb-3 bg-warning-light">
+                                <i class="bi bi-gear-fill fs-2 text-warning"></i>
+                            </div>
+                            <h4 class="fw-bold">GameBox Service</h4>
+                            <p class="text-muted flex-grow-1">Gestión eficiente de servicios técnicos para optimizar el rendimiento y satisfacer las necesidades de los clientes.</p>
+                            <a href="https://gameboxservice.onrender.com" target="_blank" class="btn btn-link p-0 text-decoration-none fw-bold mt-auto text-warning">Ver detalles →</a>
+                        </div>
+
+                        <div class="card service-card d-flex flex-column p-4 border-0 shadow-sm">
+                            <div class="icon-box mb-3 bg-success-light">
+                                <i class="bi bi-phone-fill fs-2 text-success"></i>
+                            </div>
+                            <h4 class="fw-bold">Vitalia</h4>
+                            <p class="text-muted flex-grow-1">Plataforma desarrollada con Angular, Spring Boot y PostgreSQL, incluyendo una versión móvil con Ionic.</p>
+                            <button class="btn btn-link p-0 text-decoration-none fw-bold mt-auto text-success">Ver detalles →</button>
+                        </div>
+
+                        <div class="card service-card d-flex flex-column p-4 border-0 shadow-sm">
+                            <div class="icon-box mb-3" style="background: #f3e8ff; color: #a855f7;">
+                                <i class="bi bi-controller fs-2"></i>
+                            </div>
+                            <h4 class="fw-bold">Tienda de Videojuegos</h4>
+                            <p class="text-muted flex-grow-1">E-commerce de videojuegos impulsado por JavaScript y Node.js para un backend robusto y veloz.</p>
+                            <button class="btn btn-link p-0 text-decoration-none fw-bold mt-auto" style="color: #a855f7;">Ver detalles →</button>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            <footer class="bg-white border-top py-4 mt-auto">
+                <div class="container-fluid px-4 d-flex flex-wrap justify-content-between align-items-center gap-3">
+                    <p class="text-muted mb-0">© 2026 Jhan Pool Posada. Todos los derechos reservados.</p>
+                </div>
+            </footer>
+
+        </main>
+    </div>
+
+    <script>
+        document.getElementById('sidebarToggle').addEventListener('click', function() {
+            document.getElementById('sidebar').classList.toggle('show');
+        });
+    </script>
+</body>
+
 </body>
 </html>

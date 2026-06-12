@@ -126,3 +126,101 @@ body {
 }
 .floating { animation: float 4s ease-in-out infinite; }
 .bg-soft-primary { background: #e0e7ff; }
+
+
+/* =========================================
+   NUEVO LAYOUT: HEADER + SIDEBAR + MAIN 
+   ========================================= */
+
+/* 1. Asegurar que el Header quede por encima de todo */
+.glass-nav {
+    z-index: 1050;
+}
+
+/* 2. Contenedor principal que envuelve Sidebar y Contenido */
+.layout-wrapper {
+    display: flex;
+    min-height: 100vh;
+    padding-top: 76px; /* Altura aproximada del header */
+}
+
+/* 3. Sidebar Fijo y Colapsable */
+.sidebar {
+    width: 260px;
+    background-color: white;
+    border-right: 1px solid rgba(0,0,0,0.05);
+    position: fixed;
+    top: 76px;
+    bottom: 0;
+    left: 0;
+    overflow-y: auto;
+    padding: 2rem 1.5rem;
+    z-index: 1040;
+    /* 5. Transición suave */
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sidebar-link {
+    display: block;
+    padding: 12px 20px;
+    color: #475569;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    transition: 0.3s;
+}
+
+.sidebar-link:hover, .sidebar-link.active {
+    background-color: #eff6ff;
+    color: var(--primary);
+}
+
+/* 4. Contenedor de la página (Main + Footer) */
+.main-content {
+    flex-grow: 1;
+    margin-left: 260px; /* Deja espacio para el sidebar en escritorio */
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 76px);
+    /* 5. Transición suave */
+    transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.content-body {
+    flex: 1 0 auto; /* Empuja el footer hacia abajo */
+}
+
+/* Footer Pegajoso */
+footer {
+    flex-shrink: 0;
+}
+
+/* 6. Grid de Tarjetas para Experiencia */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    width: 100%;
+}
+
+.service-card {
+    width: 100%; /* Permite que el CSS Grid controle el ancho */
+    min-height: 350px;
+}
+
+/* =========================================
+   RESPONSIVE (MÓVIL)
+   ========================================= */
+@media (max-width: 991px) {
+    .sidebar {
+        transform: translateX(-100%); /* Oculto por defecto en móvil */
+        box-shadow: 4px 0 15px rgba(0,0,0,0.1);
+    }
+    .sidebar.show {
+        transform: translateX(0); /* Clase que agregaremos con JS */
+    }
+    .main-content {
+        margin-left: 0; /* El contenido ocupa toda la pantalla */
+    }
+}
